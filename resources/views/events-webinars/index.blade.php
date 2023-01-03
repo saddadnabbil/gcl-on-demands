@@ -6,14 +6,14 @@
         <div class="col-lg-12">
           <div class="page-content">
             <!-- ***** Banner Start ***** -->
-            <div class="main-banner">
+            <div class="main-banner" style="background-image: url({{ asset('assets/images/banner-bg.jpg') }})">
               <div class="row">
                 <div class="col-lg-7">
                   <div class="header-text">
                     <h6>Welcome To Events & Webinars</h6>
                     <h4><em>Browse</em> Our Popular Events & Webinars Here</h4>
                     <div class="main-button">
-                      <a href="browse.html">Browse Now</a>
+                      <a href="{{ route('popular') }}">Browse Now</a>
                     </div>
                   </div>
                 </div>
@@ -30,7 +30,7 @@
                       <a href="#upcoming">
                         <div class="icon">
                           <img
-                            src="assets/images/icon1.png"
+                            src="{{ asset('assets/images/icon1.png') }}"
                             alt=""
                             style="max-width: 60px; border-radius: 50%"
                           />
@@ -46,10 +46,10 @@
                   </div>
                   <div class="col-lg-4">
                     <div class="item">
-                      <a href="on-demands.html"
+                      <a href="{{ route('on-demands') }}"
                         ><div class="icon">
                           <img
-                            src="assets/images/icon3.png"
+                            src="{{ asset('assets/images/icon3.png') }}"
                             alt=""
                             style="max-width: 60px; border-radius: 50%"
                           />
@@ -65,10 +65,10 @@
                   </div>
                   <div class="col-lg-4">
                     <div class="item">
-                      <a href="popular.html">
+                      <a href="{{ route('popular') }}">
                         <div class="icon">
                           <img
-                            src="assets/images/icon2.png"
+                            src="{{ asset('assets/images/icon2.png') }}"
                             alt=""
                             style="max-width: 60px; border-radius: 50%"
                           />
@@ -82,11 +82,6 @@
                       </a>
                     </div>
                   </div>
-                  <!-- <div class="col-lg-12">
-                    <div class="main-button">
-                      <a href="profile.html">Go To Profile</a>
-                    </div>
-                  </div> -->
                 </div>
               </div>
             </div>
@@ -102,7 +97,16 @@
                   <div class="owl-features owl-carousel">
                     <div class="item">
                       <div class="thumb">
-                        <img src="assets/images/featured-01.jpg" alt="" />
+                        <img src="{{ asset('assets/images/featured-01.jpg') }}" alt="" />
+                        <div class="hover-effect">
+                          <h6>Webinar</h6>
+                        </div>
+                      </div>
+                      <h4>Qiagen Webinar<br /><span>20 Januari 2023</span></h4>
+                    </div>
+                    <div class="item">
+                      <div class="thumb">
+                        <img src="{{ asset('assets/images/featured-02.jpg') }}" alt="" />
                         <div class="hover-effect">
                           <h6>Webinar</h6>
                         </div>
@@ -115,7 +119,7 @@
                     </div>
                     <div class="item">
                       <div class="thumb">
-                        <img src="assets/images/featured-02.jpg" alt="" />
+                        <img src="{{ asset('assets/images/featured-03.jpg') }}" alt="" />
                         <div class="hover-effect">
                           <h6>Webinar</h6>
                         </div>
@@ -128,7 +132,7 @@
                     </div>
                     <div class="item">
                       <div class="thumb">
-                        <img src="assets/images/featured-03.jpg" alt="" />
+                        <img src="{{ asset('assets/images/featured-01.jpg') }}" alt="" />
                         <div class="hover-effect">
                           <h6>Webinar</h6>
                         </div>
@@ -141,7 +145,7 @@
                     </div>
                     <div class="item">
                       <div class="thumb">
-                        <img src="assets/images/featured-01.jpg" alt="" />
+                        <img src="{{ asset('assets/images/featured-02.jpg') }}" alt="" />
                         <div class="hover-effect">
                           <h6>Webinar</h6>
                         </div>
@@ -154,20 +158,7 @@
                     </div>
                     <div class="item">
                       <div class="thumb">
-                        <img src="assets/images/featured-02.jpg" alt="" />
-                        <div class="hover-effect">
-                          <h6>Webinar</h6>
-                        </div>
-                      </div>
-                      <h4>Qiagen Webinar<br /><span>20 Januari 2023</span></h4>
-                      <!-- <ul>
-                        <li><i class="fa fa-star"  style=""></i> 4.8 &nbsp;</li>
-                        <li><i class="fa fa-download"></i> 2.3M</li>
-                      </ul> -->
-                    </div>
-                    <div class="item">
-                      <div class="thumb">
-                        <img src="assets/images/featured-03.jpg" alt="" />
+                        <img src="{{ asset('assets/images/featured-03.jpg') }}" alt="" />
                         <div class="hover-effect">
                           <h6>Webinar</h6>
                         </div>
@@ -198,7 +189,7 @@
                   </div>
 
                   <div class="text-button">
-                    <a href="profile.html">Visit Now</a>
+                    <a href="/about-us">Visit Now</a>
                   </div>
                 </div>
               </div>
@@ -216,7 +207,7 @@
                     <div class="col-lg-4 col-sm-6">
                       <div class="item">
                         <div class="container-img">
-                          <a href="single-on-demand.html"
+                          <a href="{{ route('single-on-demand') }}"
                             ><img
                               src="assets/images/popular-01.jpg"
                               alt=""
@@ -243,7 +234,7 @@
                     <div class="col-lg-4 col-sm-6">
                       <div class="item">
                         <div class="container-img">
-                          <a href="single-on-demand.html"
+                          <a href="{{ route('single-on-demand') }}"
                             ><img
                               src="assets/images/popular-01.jpg"
                               alt=""
@@ -270,7 +261,7 @@
                     <div class="col-lg-4 col-sm-6">
                       <div class="item">
                         <div class="container-img">
-                          <a href="single-on-demand.html"
+                          <a href="{{ route('single-on-demand') }}"
                             ><img
                               src="assets/images/popular-01.jpg"
                               alt=""
@@ -297,7 +288,7 @@
                     <div class="col-lg-4 col-sm-6">
                       <div class="item">
                         <div class="container-img">
-                          <a href="single-on-demand.html"
+                          <a href="{{ route('single-on-demand') }}"
                             ><img
                               src="assets/images/popular-01.jpg"
                               alt=""
@@ -324,7 +315,7 @@
                     <div class="col-lg-4 col-sm-6">
                       <div class="item">
                         <div class="container-img">
-                          <a href="single-on-demand.html"
+                          <a href="{{ route('single-on-demand') }}"
                             ><img
                               src="assets/images/popular-01.jpg"
                               alt=""
@@ -351,7 +342,7 @@
                     <div class="col-lg-4 col-sm-6">
                       <div class="item">
                         <div class="container-img">
-                          <a href="single-on-demand.html"
+                          <a href="{{ route('single-on-demand') }}"
                             ><img
                               src="assets/images/popular-01.jpg"
                               alt=""
@@ -378,7 +369,7 @@
                     <div class="col-lg-4 col-sm-6">
                       <div class="item">
                         <div class="container-img">
-                          <a href="single-on-demand.html"
+                          <a href="{{ route('single-on-demand') }}"
                             ><img
                               src="assets/images/popular-01.jpg"
                               alt=""
@@ -405,7 +396,7 @@
                     <div class="col-lg-4 col-sm-6">
                       <div class="item">
                         <div class="container-img">
-                          <a href="single-on-demand.html"
+                          <a href="{{ route('single-on-demand') }}"
                             ><img
                               src="assets/images/popular-01.jpg"
                               alt=""

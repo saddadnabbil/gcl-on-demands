@@ -6,7 +6,7 @@
             <nav class="main-nav justify-content-lg-between">
 
               <!-- ***** Logo Start ***** -->
-              <a href="index.html" class="logo my-auto">
+              <a href="{{ route('events-webinars') }}" class="logo my-auto">
                 <img src="{{ asset('assets/images/logo-gcl.png') }}" alt="" height="61" />
               </a>
               <!-- ***** Logo End ***** -->
@@ -15,8 +15,8 @@
               <div class="row">
                 <div class="col-lg-12 top-bar d-lg-flex justify-content-end">
                   <ul class="nav">
-                    <li><a href="index.html" class="active">EN</a></li>
-                    <li><a href="on-demands.html">ID</a></li>
+                    <li><a href="" class="active">EN</a></li>
+                    <li><a href="">ID</a></li>
                     <div class="">
                       <li>
                         <a
