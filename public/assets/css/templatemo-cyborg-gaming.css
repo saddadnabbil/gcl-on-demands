@@ -1097,14 +1097,14 @@ Featured Games Style
     border-radius: 23px;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1024px) {
     .featured-games .item img {
         max-height: 377px;
         min-height: 377px;
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .featured-games .item img {
         max-height: 411px;
         min-height: 411px;
@@ -1115,6 +1115,13 @@ Featured Games Style
     .featured-games .item img {
         max-height: 476px;
         min-height: 476px;
+    }
+}
+
+@media (max-width: 320px) {
+    .featured-games .item img {
+        max-height: 300px;
+        min-height: 300px;
     }
 }
 
