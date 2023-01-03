@@ -13,15 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 Route::middleware('guest')->group(function () {
-
-     Route::get('/events-webinars', function () {
+    Route::get('/', function () {
         return view('events-webinars.index');
-    });
-     
+    })->name('events-webinars');
+
+    Route::get('/on-demands', function () {
+        return view('on-demands.index');
+    })->name('on-demands');
+
+    Route::get('/popular', function () {
+        return view('popular.index');
+    })->name('popular');
+
+    Route::get('/single-on-demand', function () {
+        return view('single-on-demand');
+    })->name('single-on-demand');
 });
