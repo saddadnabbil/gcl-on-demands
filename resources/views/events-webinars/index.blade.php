@@ -97,7 +97,7 @@
                   <div class="owl-features owl-carousel">
                     <div class="item">
                       <div class="thumb">
-                        <img src="{{ asset('assets/images/featured-01.jpg') }}" alt="" />
+                        <img src="{{ asset('assets/images/profile.jpg') }}" alt="" />
                         <div class="hover-effect">
                           <h6>Webinar</h6>
                         </div>
