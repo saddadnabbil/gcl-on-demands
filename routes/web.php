@@ -29,6 +29,6 @@ Route::middleware('guest')->group(function () {
     })->name('popular');
 
     Route::get('/single-on-demand', function () {
-        return view('single-on-demand');
+        return view('single-on-demand.index');
     })->name('single-on-demand');
 });
