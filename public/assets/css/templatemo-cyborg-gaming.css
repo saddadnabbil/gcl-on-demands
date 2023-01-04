@@ -26,6 +26,9 @@ font & reset css
 --------------------------------------------- 
 */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 /* 
 ---------------------------------------------
 reset
@@ -139,7 +142,7 @@ hgroup {
 
 html,
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Lato", "Poppins", sans-serif;
     font-weight: 400;
     background-color: #fff;
     font-size: 16px;
@@ -162,10 +165,11 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: "Inter", "Lato", "Poppins", sans-serif;
     margin-top: 0px;
     margin-bottom: 0px;
     color: #101820;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 ul {
@@ -192,7 +196,7 @@ html,
 body {
     /* background: #D6E6F2; */
     background: #fff;
-    font-family: "Poppins", sans-serif;
+    font-family: "Lato", "Poppins", sans-serif;
 }
 
 body .page-content {
@@ -862,7 +866,8 @@ Banner Style
 */
 
 .main-banner {
-    /* background-image: url(../images/banner-bg.jpg); */
+    /* background-image: url(../images/bannerr.png); */
+    background-image: url(../images/banner-bg.jpg);
     background-position: center center;
     background-size: cover;
     min-height: 380px;
@@ -1090,39 +1095,7 @@ Featured Games Style
 }
 
 .featured-games .item img {
-    overflow: hidden;
-    min-width: 173px;
-    max-height: 370px;
-    min-height: 370px;
     border-radius: 23px;
-}
-
-@media (max-width: 1024px) {
-    .featured-games .item img {
-        max-height: 377px;
-        min-height: 377px;
-    }
-}
-
-@media (max-width: 768px) {
-    .featured-games .item img {
-        max-height: 411px;
-        min-height: 411px;
-    }
-}
-
-@media (max-width: 425px) {
-    .featured-games .item img {
-        max-height: 476px;
-        min-height: 476px;
-    }
-}
-
-@media (max-width: 320px) {
-    .featured-games .item img {
-        max-height: 300px;
-        min-height: 300px;
-    }
 }
 
 .featured-games .item h4 {
