@@ -23,8 +23,8 @@ class SchoolMajorController extends Controller
         if (request()->ajax()) {
             return datatables()->of($schoolMajors)
                 ->addIndexColumn()
-                ->addColumn('abbreviated_word', 'school_majors.datatable.abbreviated_word')
-                ->addColumn('action', 'school_majors.datatable.action')
+                ->addColumn('abbreviated_word', 'dashboard.school_majors.datatable.abbreviated_word')
+                ->addColumn('action', 'dashboard.school_majors.datatable.action')
                 ->rawColumns(['abbreviated_word', 'action'])
                 ->toJson();
         }

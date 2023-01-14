@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="row">
-	@include('utilities.alert-flash-message')
+	@include('dashboard.utilities.alert-flash-message')
 	<div class="col card px-3 py-3">
 		@auth
 		<div class="d-flex justify-content-end pb-3">
@@ -35,17 +35,17 @@
 @endsection
 
 @push('modal')
-@include('school_classes.modal.create')
-@include('school_classes.modal.show')
-@include('school_classes.modal.edit')
+@include('dashboard.school_classes.modal.create')
+@include('dashboard.school_classes.modal.show')
+@include('dashboard.school_classes.modal.edit')
 @endpush
 
 @if(!Auth::guest())
 	@push('js')
-	@include('school_classes.script')
+	@include('dashboard.school_classes.script')
 	@endpush
 @else
 	@push('js')
-	@include('school_classes.script-guest')
+	@include('dashboard.school_classes.script-guest')
 	@endpush
 @endif

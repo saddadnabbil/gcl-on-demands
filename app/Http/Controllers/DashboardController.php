@@ -6,7 +6,6 @@ use App\Models\SchoolClass;
 use App\Models\SchoolMajor;
 use App\Models\Student;
 use App\Repositories\CashTransactionRepository;
-use App\Repositories\CashTransactionExpenditureRepository;
 use Illuminate\View\View;
 
 class DashboardController extends Controller
@@ -15,7 +14,6 @@ class DashboardController extends Controller
 
     public function __construct(
         CashTransactionRepository $cashTransactionRepository,
-        private CashTransactionExpenditureRepository $cashTransactionExpenditureRepository,
     ) {
         $this->cashTransactionRepository = $cashTransactionRepository;
         $this->startOfMonth = now()->startOfMonth()->format('Y-m-d');
@@ -31,22 +29,18 @@ class DashboardController extends Controller
     {
         // Operasi untuk Balance Kas Bulan ini
         $amountCashTransactionThisMonth = $this->cashTransactionRepository->sumAmountBy('month', month: date('m'));
-        $amountCashTransactionExpenditureThisMonth = $this->cashTransactionExpenditureRepository->sumExpenditureBy('month', month: date('m'));
-        $amountBalanceThisMonth = $amountCashTransactionThisMonth - $amountCashTransactionExpenditureThisMonth;
+        $amountBalanceThisMonth = $amountCashTransactionThisMonth;
 
         // Int ke Format Rupiah Indonesia Perbulan
         $amountCashTransactionThisMonth = indonesian_currency($this->cashTransactionRepository->sumAmountBy('month', month: date('m')));
-        $amountCashTransactionExpenditureThisMonth = indonesian_currency($this->cashTransactionExpenditureRepository->sumExpenditureBy('month', month: date('m')));
         $amountBalanceThisMonth = indonesian_currency($amountBalanceThisMonth);
 
         // Operasi untuk Balance Total Kas
         $amountCashTransaction = $this->cashTransactionRepository->sumAmount();
-        $amountCashTransactionExpenditure = $this->cashTransactionExpenditureRepository->sumExpenditure();
-        $amountBalance = $amountCashTransaction - $amountCashTransactionExpenditure;
+        $amountBalance = $amountCashTransaction ;
 
         // Int ke Format Rupiah Indonesia Total
         $amountCashTransaction = indonesian_currency($this->cashTransactionRepository->sumAmount());
-        $amountCashTransactionExpenditure = indonesian_currency($this->cashTransactionExpenditureRepository->sumExpenditure());
         $amountBalance = indonesian_currency($amountBalance);
 
         $latestCashTransactions = $this->cashTransactionRepository
@@ -59,13 +53,10 @@ class DashboardController extends Controller
 
             // total 
             'amountCashTransaction' => $amountCashTransaction,
-            'amountCashTransactionExpenditure' => $amountCashTransactionExpenditure,
             'amountBalance' => $amountBalance,
 
             // perbulan
             'amountCashTransactionThisMonth' => $amountCashTransactionThisMonth,
-            'amountCashTransactionExpenditureThisMonth' => $amountCashTransactionExpenditureThisMonth,
-
             'amountBalanceThisMonth' => $amountBalanceThisMonth,
             'latestCashTransactions' => $latestCashTransactions,
 

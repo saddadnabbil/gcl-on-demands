@@ -46,9 +46,9 @@ class StudentController extends Controller
                     'school_class_id',
                     fn ($model) => $model->school_class->name
                 )
-                ->addColumn('school_major', 'students.datatable.school_major')
-                ->addColumn('school_year', 'students.datatable.school_year')
-                ->addColumn('action', 'students.datatable.action')
+                ->addColumn('school_major', 'dashboard.students.datatable.school_major')
+                ->addColumn('school_year', 'dashboard.students.datatable.school_year')
+                ->addColumn('action', 'dashboard.students.datatable.action')
                 ->rawColumns(['action', 'school_major', 'school_year'])
                 ->toJson();
         }

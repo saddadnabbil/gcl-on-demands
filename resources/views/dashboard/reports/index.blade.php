@@ -152,5 +152,5 @@
 @endsection
 
 @push('js')
-@include('reports.script')
+@include('dashboard.reports.script')
 @endpush

@@ -124,7 +124,7 @@
 	</div>
 	{{-- End of Statistics --}}
 
-	@include('utilities.alert-flash-message')
+	@include('dashboard.utilities.alert-flash-message')
 	<div class="col card px-3 py-3">
 		@auth
 		<div class="d-flex justify-content-end pb-3">
@@ -133,7 +133,7 @@
 					<i class="bi bi-file-earmark-excel-fill"></i>
 					Export Excel
 				</a>
-				<a href="/cash-transaction-expenditures/history" class="btn btn-secondary">
+				<a href="/cash-transaction/history" class="btn btn-secondary">
 					<span class="badge">{{ $cashTransactionTrashedCount }}</span> Histori Data Kas
 				</a>
 				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -165,19 +165,19 @@
 @endsection
 
 @push('modal')
-@include('cash_transactions.modal.create')
-@include('cash_transactions.modal.show')
-@include('cash_transactions.modal.edit')
+@include('dashboard.cash_transactions.modal.create')
+@include('dashboard.cash_transactions.modal.show')
+@include('dashboard.cash_transactions.modal.edit')
 
-@include('cash_transactions.modal.look-more' )
+@include('dashboard.cash_transactions.modal.look-more' )
 @endpush
 
 @if(!Auth::guest())
 	@push('js')
-	@include('cash_transactions.script')
+	@include('dashboard.cash_transactions.script')
 	@endpush
 @else
 	@push('js')
-	@include('cash_transactions.script-guest')
+	@include('dashboard.cash_transactions.script-guest')
 	@endpush
 @endif

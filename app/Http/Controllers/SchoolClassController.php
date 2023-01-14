@@ -23,7 +23,7 @@ class SchoolClassController extends Controller
         if (request()->ajax()) {
             return datatables()->of($schoolClasses)
                 ->addIndexColumn()
-                ->addColumn('action', 'school_classes.datatable.action')
+                ->addColumn('action', 'dashboard.school_classes.datatable.action')
                 ->rawColumns(['action'])
                 ->toJson();
         }

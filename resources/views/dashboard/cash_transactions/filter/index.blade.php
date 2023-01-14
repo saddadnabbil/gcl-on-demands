@@ -11,7 +11,7 @@
 		</div>
 	</div>
 
-	@include('utilities.alert-flash-message')
+	@include('dashboard.utilities.alert-flash-message')
 	<div class="col card px-3 py-3" id="datatable-wrap" style="display: none;">
 		<div class="table-responsive">
 			<table class="table table-sm w-100" id="datatable">
@@ -35,10 +35,10 @@
 
 @if (!Auth::guest())
 	@push('js')
-	@include('cash_transactions.filter.script')
+	@include('dashboard.cash_transactions.filter.script')
 	@endpush	
 @else
 	@push('js')
-	@include('cash_transactions.filter.script-guest')
+	@include('dashboard.cash_transactions.filter.script-guest')
 	@endpush
 @endif

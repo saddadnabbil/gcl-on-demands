@@ -51,8 +51,4 @@ class User extends Authenticatable
         return $this->hasMany(CashTransaction::class);
     }
 
-    public function cash_transaction_expenditures(): HasMany
-    {
-        return $this->hasMany(CashTransactionExpenditure::class);
-    }
 }

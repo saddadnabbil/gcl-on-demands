@@ -4,7 +4,7 @@
 <section class="row">
 	<div class="col-12 col-lg-12">
 		<div class="row">
-			<div class="col-6 col-lg-3 col-md-6">
+			<div class="col-6 col-lg-4 col-md-6">
 				<a href="@if (!Auth::guest()) {{ route('students.index') }} @else {{ route('guest.students.index') }}  @endif">
 					<div class="card card-stat">
 						<div class="card-body px-3 py-4-5">
@@ -25,7 +25,7 @@
 					</div>
 				</a>
 			</div>
-			<div class="col-6 col-lg-3 col-md-6">
+			<div class="col-6 col-lg-4 col-md-6">
 					<div class="card card-stat">
 						<div class="card-body px-3 py-4-5">
 							<div class="row">
@@ -44,7 +44,7 @@
 						</div>
 					</div>
 			</div>
-			<div class="col-6 col-lg-3 col-md-6">
+			<div class="col-6 col-lg-4 col-md-6">
 				<a href="@if (!Auth::guest()) /admin/cash-transactions @else /cash-transactions @endif">
 					<div class="card card-stat">
 						<div class="card-body px-3 py-4-5">
@@ -63,36 +63,11 @@
 					</div>
 				</a>
 			</div>
-			<div class="col-6 col-lg-3 col-md-6">
-				<a href="@if (!Auth::guest()) /admin/cash-transaction-expenditures @else /cash-transaction-expenditures @endif">
-					<div class="card card-stat">
-						<div class="card-body px-3 py-4-5">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="stats-icon red">
-										<i class="iconly-boldWork"></i>
-									</div>
-								</div>
-								<div class="col-md-8">
-									<h6 class="text-muted font-semibold">Total Pengeluaran</h6>
-									<h6 class="font-extrabold {{ $schoolMajorCount <= 0 ? 'text-danger' : '' }} mb-0">
-										<h6 class="font-extrabold mb-0">{{ $amountCashTransactionExpenditure }}</h6>
-									</h6>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-12 col-lg-6 col-md-6">
+			<div class="col-sm-12 col-lg-12 col-md-12">
 				@include('dashboard.dashboard.charts.chart')
 			</div>
-			<div class="col-sm-12 col-lg-6 col-md-6">
-				@include('dashboard.dashboard.chart_expenditures.chart')
-			</div>
-
 			</div>
 
 			<div class="col-12 col-lg-12 col-md-12">

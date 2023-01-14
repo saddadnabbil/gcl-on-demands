@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="row">
-    @include('utilities.alert-flash-message')
+    @include('dashboard.utilities.alert-flash-message')
     <div class="col-md-12 card px-3 py-3 table-responsive">
         <div class="col-md-12 py-2">
             <a href="{{ route('students.index') }}" class="btn btn-primary float-end mx-2">
@@ -30,5 +30,5 @@
 @endsection
 
 @push('js')
-@include('students.history.script')
+@include('dashboard.students.history.script')
 @endpush

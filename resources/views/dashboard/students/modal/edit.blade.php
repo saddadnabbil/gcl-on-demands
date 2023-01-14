@@ -6,7 +6,7 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				@include('utilities.loading-alert')
+				@include('dashboard.utilities.loading-alert')
 				<form action="#" method="POST" id="edit-student-form">
 					@csrf @method('PUT')
 					<div class="row">

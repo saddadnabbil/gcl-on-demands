@@ -7,7 +7,6 @@ use App\Http\Controllers\SchoolClassController;
 use App\Http\Controllers\SchoolMajorController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\CashTransactionController;
-use App\Http\Controllers\CashTransactionExpenditureHistoryController;
 use App\Http\Controllers\CashTransactionFilterController;
 use App\Http\Controllers\CashTransactionHistoryController;
 use App\Http\Controllers\CashTransactionReportController;
@@ -18,10 +17,9 @@ use App\Http\Controllers\StudentHistoryController;
 require __DIR__ . '/auth.php';
 
 // If accessing root path "/" it will be redirect to /login
-Route::redirect('/', 'events-webinars');
+// Route::redirect('/', 'events-webinars');
 
 Route::middleware('auth')->group(function () {
-
     Route::get('/admin/dashboard', DashboardController::class)->name('dashboard');
 
     Route::resource('admin/students', StudentController::class)->except('create', 'show', 'edit');
@@ -31,9 +29,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin/cash-transactions/filter', CashTransactionFilterController::class)->name('cash-transactions.filter');
     Route::resource('admin/cash-transactions', CashTransactionController::class)->except('create', 'show', 'edit');
-
-    Route::get('/admin/cash-transaction-expenditures/filter', CashTransactionExpenditureFilterController::class)->name('cash-transaction-expenditures.filter');
-    Route::resource('/admin/cash-transaction-expenditures', CashTransactionExpenditureController::class)->except('create', 'show', 'edit');
 
     //  Report routes
     Route::get('/admin/report', CashTransactionReportController::class)->name('report.index');
@@ -47,12 +42,6 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::controller(CashTransactionHistoryController::class)->prefix('/admin/cash-transactions/history')->name('cash-transactions.')->group(function () {
-        Route::get('', 'index')->name('index.history');
-        Route::post('{id}', 'restore')->name('restore.history');
-        Route::delete('{id}', 'destroy')->name('destroy.history');
-    });
-
-    Route::controller(CashTransactionExpenditureHistoryController::class)->prefix('/admin/cash-transaction-expenditures/history')->name('cash-transaction-expenditures.')->group(function () {
         Route::get('', 'index')->name('index.history');
         Route::post('{id}', 'restore')->name('restore.history');
         Route::delete('{id}', 'destroy')->name('destroy.history');
@@ -107,11 +96,6 @@ Route::middleware('guest')->group(function () {
     Route::resource('cash-transactions', CashTransactionController::class, [
         'as' => 'guest'
     ])->except('store', 'update', 'destroy', 'create', 'show', 'edit');
-
-    Route::get('/cash-transaction-expenditures/filter', CashTransactionExpenditureFilterController::class)->name('cash-transaction-expenditures.filter.guest');
-    Route::resource('cash-transaction-expenditures', CashTransactionExpenditureController::class, [
-        'as' => 'guest'
-    ])->except('store', 'update', 'destroy','create', 'show', 'edit');
 
     //  Report routes
     Route::get('/report', CashTransactionReportController::class)->name('report.guest.index');

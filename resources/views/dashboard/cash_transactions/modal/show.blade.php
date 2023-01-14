@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close  " data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                @include('utilities.loading-alert')
+                @include('dashboard.utilities.loading-alert')
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mb-3">

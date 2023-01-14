@@ -24,7 +24,7 @@ class AdministratorController extends Controller
             return datatables()->of($administrators)
                 ->addIndexColumn()
                 ->addColumn('created_at', fn ($model) => date('d-m-Y H:i', strtotime($model->created_at)))
-                ->addColumn('action', 'administrators.datatable.action')
+                ->addColumn('action', 'dashboard.administrators.datatable.action')
                 ->toJson();
         }
 

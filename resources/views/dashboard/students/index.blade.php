@@ -42,7 +42,7 @@
 		</div>
 	</div>
 
-	@include('utilities.alert-flash-message')
+	@include('dashboard.utilities.alert-flash-message')
 	<div class="col card px-3 py-3">
 		@auth
 		<div class="d-flex justify-content-end pb-3">
@@ -83,18 +83,18 @@
 @endsection
 
 @push('modal')
-@include('students.modal.create')
-@include('students.modal.show')
-@include('students.modal.edit')
+@include('dashboard.students.modal.create')
+@include('dashboard.students.modal.show')
+@include('dashboard.students.modal.edit')
 @endpush
 
 @if(!Auth::guest())
 	@push('js')
-	@include('students.script')
+	@include('dashboard.students.script')
 	@endpush
 @else
 	@push('js')
-	@include('students.script-guest')
+	@include('dashboard.students.script-guest')
 	@endpush
 @endif
 

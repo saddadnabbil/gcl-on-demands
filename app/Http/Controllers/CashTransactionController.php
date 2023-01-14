@@ -50,7 +50,7 @@ class CashTransactionController extends Controller
                 ->addColumn('bill', fn ($model) => indonesian_currency($model->bill))
                 ->addColumn('amount', fn ($model) => indonesian_currency($model->amount))
                 ->addColumn('date', fn ($model) => date('d-m-Y', strtotime($model->date)))
-                ->addColumn('action', 'cash_transactions.datatable.action')
+                ->addColumn('action', 'dashboard.cash_transactions.datatable.action')
                 ->rawColumns(['action'])
                 ->toJson();
         }

@@ -7,8 +7,6 @@ use App\Http\Controllers\API\v1\SchoolMajorController;
 use App\Http\Controllers\API\v1\AdministratorController;
 use App\Http\Controllers\API\v1\DashboardChartController;
 use App\Http\Controllers\API\v1\CashTransactionController;
-use App\Http\Controllers\API\v1\DashboardChartExpenditureController;
-use App\Http\Controllers\API\v1\CashTransactionExpenditureController;
 
 Route::name('api.')->prefix('v1')->group(function () {
     Route::get('/school-class/{id}', [SchoolClassController::class, 'show'])->name('school-class.show');
@@ -26,9 +24,5 @@ Route::name('api.')->prefix('v1')->group(function () {
     Route::get('/cash-transaction/{id}', [CashTransactionController::class, 'show'])->name('cash-transaction.show');
     Route::get('/cash-transaction/{id}/edit', [CashTransactionController::class, 'edit'])->name('cash-transaction.edit');
 
-    Route::get('/cash-transaction-expenditures/{id}', [CashTransactionExpenditureController::class, 'show'])->name('cash-transaction-expenditures.show');
-    Route::get('/cash-transaction-expenditures/{id}/edit', [CashTransactionExpenditureController::class, 'edit'])->name('cash-transaction-expenditures.edit');
-
     Route::get('/chart', DashboardChartController::class)->name('chart');
-    Route::get('/chart-expenditure', DashboardChartExpenditureController::class)->name('chart.expenditure');
 });

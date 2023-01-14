@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="row">
-    @include('utilities.alert-flash-message')
+    @include('dashboard.utilities.alert-flash-message')
     <div class="col card px-3 py-3">
         <div class="d-flex justify-content-end pb-3">
             <div class="btn-group d-gap gap-2">
@@ -37,11 +37,11 @@
 @endsection
 
 @push('modal')
-@include('administrators.modal.create')
-@include('administrators.modal.show')
-@include('administrators.modal.edit')
+@include('dashboard.administrators.modal.create')
+@include('dashboard.administrators.modal.show')
+@include('dashboard.administrators.modal.edit')
 @endpush
 
 @push('js')
-@include('administrators.script')
+@include('dashboard.administrators.script')
 @endpush
